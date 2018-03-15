@@ -46,7 +46,7 @@ export default class TicketContainer extends Component {
       this.state.data.length &&
       this.state.data.map(ticketData => {
         return (
-          <Ticket item={ticketData} deleteTask={this.deleteTask} scope={this} editTask={this.editTask} saveTask={this.saveTask}/>
+          <Ticket key={ticketData.id} item={ticketData} deleteTask={this.deleteTask} scope={this} editTask={this.editTask} saveTask={this.saveTask}/>
         );
       });
     return (
@@ -60,8 +60,8 @@ export default class TicketContainer extends Component {
         <div className={Style.deskHead}>
           <div className={Style.deskName}>
             {this.props.title}
-            <span onClick={e => this.addTask.call(this)}>➕</span>
-            <span onClick={e => this.hideTrack.call(this)}>❌</span>
+            <span onClick={e => this.addTask.call(this)} className={Style.btn}>➕</span>
+            <span onClick={e => this.hideTrack.call(this)} className={Style.btn}>❌</span>
           </div>
         </div>
         {finalList}

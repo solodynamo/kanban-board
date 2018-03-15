@@ -31,49 +31,49 @@ export default class Ticket extends React.Component {
           draggable="true"
           onDragStart={dragStart}
           onDrop={() => false}
-          firstName={item.firstName}
-          lastName={item.lastName}
+          firstname={item.firstName}
+          lastname={item.lastName}
           description={item.description}
           tasktitle={item.title}
           track={item.track}
         >
-          <header onDrop={() => false}>
-            <span>{item.title}</span>
-            <span data-taskid={item.id}  onClick={e => this.props.deleteTask.call(this.props.scope, e)}>❌</span>
+          <header onDrop={() => false} className={Style.header}>
+            <span>Title: {item.title}</span>
+            <span data-taskid={item.id}  onClick={e => this.props.deleteTask.call(this.props.scope, e)} className={Style.btn}>❌</span>
           </header>
           <div className={Style.icontainer} onMouseDown={() => false}>
             <div>
-              <div>{`${item.firstName} ${
+              <div>Assigned To : {`${item.firstName} ${
                 item.lastName
               }`}</div>
-              <p>{item.description}</p>
+              <p>Status : {item.description}</p>
             </div>
           </div>
-          <span onClick={(e) => this.editTask(e)}>✎</span>
+          <span onClick={(e) => this.editTask(e)} className={Style.btn}>✎</span>
         </article>
       </span>) : (
         (<span onDrop={() => false}>
           <article
-            className={Style.item}
+            className={Style.eitem}
             tabIndex="0"
             data-taskid={item.id}
             draggable="true"
             onDragStart={dragStart}
             onDrop={() => false}
           >
-            <header onDrop={() => false}>
-              <span contentEditable="true">{item.title}</span>
-              <span onClick={e => this.props.deleteTask.call(this.props.scope, e)}>❌</span>
+            <header onDrop={() => false} className={Style.header}>
+              <span contentEditable="true">Title: {item.title}</span>
+              <span onClick={e => this.props.deleteTask.call(this.props.scope, e)} className={Style.btn}>❌</span>
             </header>
             <div className={Style.icontainer} onMouseDown={() => false}>
               <div>
-                <div>{`${item.firstName} ${
+                <div>Assigned To : {`${item.firstName} ${
                   item.lastName
                 }`}</div>
-                <p contentEditable="true">{item.description}</p>
+                <p contentEditable="true">Status : {item.description}</p>
               </div>
             </div>
-            <span onClick={(e) => this.saveTask(e)}>✔</span>
+            <span onClick={(e) => this.saveTask(e)} className={Style.btn}>✔</span>
           </article>
         </span>)
         )
