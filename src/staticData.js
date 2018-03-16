@@ -9,38 +9,6 @@ const data = {
       lastName: 'singh',
       description: 'Need to catch a bug !!',
       track: 'backlog'
-    },
-    {
-      id: getRandomStr(),
-      title: 'lorem',
-      firstName: 'ankit',
-      lastName: 'singh',
-      description: 'Need to catch a bug !!',
-      track: 'backlog'
-    },
-    {
-      id: getRandomStr(),
-      title: 'lorem',
-      firstName: 'ankit',
-      lastName: 'singh',
-      description: 'Need to catch a bug !!',
-      track: 'backlog'
-    },
-    {
-      id: getRandomStr(),
-      title: 'lorem',
-      firstName: 'ankit',
-      lastName: 'singh',
-      description: 'Need to catch a bug !!',
-      track: 'backlog'
-    },
-    {
-      id: getRandomStr(),
-      title: 'lorem',
-      firstName: 'ankit',
-      lastName: 'singh',
-      description: 'Need to catch a bug !!',
-      track: 'backlog'
     }
   ],
   inProgress: [
@@ -49,39 +17,7 @@ const data = {
       title: 'lorem',
       firstName: 'ankit',
       lastName: 'singh',
-      description: 'Need to catch a bug !!',
-      track: 'inProgress'
-    },
-    {
-      id: getRandomStr(),
-      title: 'lorem',
-      firstName: 'ankit',
-      lastName: 'singh',
-      description: 'Need to catch a bug !!',
-      track: 'inProgress'
-    },
-    {
-      id: getRandomStr(),
-      title: 'lorem',
-      firstName: 'ankit',
-      lastName: 'singh',
-      description: 'Need to catch a bug !!',
-      track: 'inProgress'
-    },
-    {
-      id: getRandomStr(),
-      title: 'lorem',
-      firstName: 'ankit',
-      lastName: 'singh',
-      description: 'Need to catch a bug !!',
-      track: 'inProgress'
-    },
-    {
-      id: getRandomStr(),
-      title: 'lorem',
-      firstName: 'ankit',
-      lastName: 'singh',
-      description: 'Need to catch a bug !!',
+      description: 'Need to catch a bug inProgress!!',
       track: 'inProgress'
     }
   ],
@@ -91,39 +27,7 @@ const data = {
       title: 'lorem',
       firstName: 'ankit',
       lastName: 'singh',
-      description: 'Need to catch a bug !!',
-      track: 'testingLog'
-    },
-    {
-      id: getRandomStr(),
-      title: 'lorem',
-      firstName: 'ankit',
-      lastName: 'singh',
-      description: 'Need to catch a bug !!',
-      track: 'testingLog'
-    },
-    {
-      id: getRandomStr(),
-      title: 'lorem',
-      firstName: 'ankit',
-      lastName: 'singh',
-      description: 'Need to catch a bug !!',
-      track: 'testingLog'
-    },
-    {
-      id: getRandomStr(),
-      title: 'lorem',
-      firstName: 'ankit',
-      lastName: 'singh',
-      description: 'Need to catch a bug !!',
-      track: 'testingLog'
-    },
-    {
-      id: getRandomStr(),
-      title: 'lorem',
-      firstName: 'ankit',
-      lastName: 'singh',
-      description: 'Need to catch a bug !!',
+      description: 'Need to catch a bug In testing!!',
       track: 'testingLog'
     }
   ],
@@ -133,7 +37,7 @@ const data = {
       title: 'lorem',
       firstName: 'ankit',
       lastName: 'singh',
-      description: 'Need to catch a bug !!',
+      description: 'Need to catch a bug when its done!!',
       track: 'done'
     },
     {
@@ -141,31 +45,7 @@ const data = {
       title: 'lorem',
       firstName: 'ankit',
       lastName: 'singh',
-      description: 'Need to catch a bug !!',
-      track: 'done'
-    },
-    {
-      id: getRandomStr(),
-      title: 'lorem',
-      firstName: 'ankit',
-      lastName: 'singh',
-      description: 'Need to catch a bug !!',
-      track: 'done'
-    },
-    {
-      id: getRandomStr(),
-      title: 'lorem',
-      firstName: 'ankit',
-      lastName: 'singh',
-      description: 'Need to catch a bug !!',
-      track: 'done'
-    },
-    {
-      id: getRandomStr(),
-      title: 'lorem',
-      firstName: 'ankit',
-      lastName: 'singh',
-      description: 'Need to catch a bug !!',
+      description: 'Need to catch a bug when its done!!',
       track: 'done'
     }
   ]

@@ -10,6 +10,10 @@ Features(At present)
  - ➕ To Add More Tasks.
  - ❌ To Delete Task Or A Track(By default backlog/inProgress/done/testingLog)
 
+Persistence
+
+ - Tasks added and deleted from a particular track is persisted.
+ - Task edit and drag and drop on task is persisted.
 
  1. Clone Repo
 
@@ -24,3 +28,9 @@ Features(At present)
 
     npm run start
 
+
+Todo:
+ - Sometimes UI not updates based on action on localstorage but on refresh it gets consistent.
+
+Note:
+ - Initially no tasks appear by default, do it by clicking ➕

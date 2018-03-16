@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Ticket from '../../components/ticket/index.js';
 import {
   removeItemFromArray,
@@ -42,11 +43,12 @@ export default class TicketContainer extends Component {
 
   render() {
     const finalList =
-      this.state &&
-      this.state.data.length &&
-      this.state.data.map(ticketData => {
+      this.props &&
+      this.props.data &&
+      this.props.data.length &&
+      this.props.data.map(ticketData => {
         return (
-          <Ticket key={ticketData.id} item={ticketData} deleteTask={this.deleteTask} scope={this} editTask={this.editTask} saveTask={this.saveTask}/>
+          <Ticket key={ticketData.id} item={ticketData} deleteTask={this.deleteTask} scope={this} editTask={this.editTask} saveTask={this.saveTask} title={this.state.title}/>
         );
       });
     return (
@@ -59,7 +61,7 @@ export default class TicketContainer extends Component {
       >
         <div className={Style.deskHead}>
           <div className={Style.deskName}>
-            {this.props.title}
+            <span contentEditable="true" suppressContentEditableWarning={true}>{this.props.title}</span>
             <span onClick={e => this.addTask.call(this)} className={Style.btn}>➕</span>
             <span onClick={e => this.hideTrack.call(this)} className={Style.btn}>❌</span>
           </div>
@@ -69,3 +71,8 @@ export default class TicketContainer extends Component {
     );
   }
 }
+
+TicketContainer.propTypes = {
+  data: PropTypes.array,
+  title: PropTypes.string
+};

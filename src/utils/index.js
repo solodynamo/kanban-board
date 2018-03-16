@@ -44,8 +44,14 @@ export let addItemIntoArray = arr => {
     description: 'Pls add description',
     title: 'Pls add title'
   };
-  arr.unshift(obj);
-  return arr;
+  let newArr = [];
+  if (!arr) {
+    newArr.push(obj);
+    return newArr;
+  } else {
+    arr.unshift(obj);
+    return arr;
+  }
 };
 
 export let allowDrop = e => e && e.preventDefault();
@@ -62,13 +68,47 @@ export let dragoverHandler = e => {
 };
 
 export let drop = e => {
+  let newArr = [];
   e.target.style.background = '';
-  parentN.removeChild(taskId);
-  e.target.appendChild(taskId);
+  if (e.target.nodeName !== 'P') {
+    let relocatedObj = {
+      firstName: taskId.dataset.firstname,
+      lastName: taskId.dataset.lastname,
+      description: taskId.dataset.description,
+      id : taskId.dataset.taskid,
+      title: taskId.dataset.tasktitle
+    };
+    let oldTrackId = taskId.dataset.track;
+    let oldData = getDataFromLocalStorage(oldTrackId);
+    let updatedOldData = removeItemFromArray(oldData, taskId.dataset.taskid);
+    persistDataToLocalStorage(oldTrackId, updatedOldData);
+    parentN.removeChild(taskId);
+    e.target.appendChild(taskId);
+    let data = getDataFromLocalStorage(e.target.title);
+    if(!data) {
+      newArr.push(relocatedObj);
+      persistDataToLocalStorage(e.target.title, newArr);
+    } else {
+      data.push(relocatedObj);
+      persistDataToLocalStorage(e.target.title, data);
+    }
+  }
 };
 
 export let persistDataToLocalStorage = (key,data) => {
   localStorage.setItem(key,JSON.stringify(data));
+};
+
+export let saveUpdatedTaskInTrack = (key, task, modifiedDescription, modifiedTitle) => {
+  let data = getDataFromLocalStorage(key);
+  for(var i = 0; i < data.length; i++){
+    if (data[i].id === task.id) {
+      data[i].description = modifiedDescription === '' ? task.description : modifiedDescription;
+      data[i].title = modifiedTitle === '' ? task.title : modifiedTitle;
+      break;
+    }
+  }
+  persistDataToLocalStorage(key, data);
 };
 
 export let getDataFromLocalStorage = (key) => JSON.parse(localStorage.getItem(key));
